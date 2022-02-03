@@ -1,51 +1,25 @@
 import React from "react";
-
-type PromiseState =
-  | { status: "initial" }
-  | { status: "loading" }
-  | { status: "successfull"; data: unknown }
-  | { status: "failed"; error: string };
+import { HealthChecker } from "./HealthChecker";
+import { Box, ChakraProvider, Flex, Heading, Text } from "@chakra-ui/react";
 
 export const App: React.FC = () => {
-  const [requestState, setRequestState] = React.useState<PromiseState>({
-    status: "initial",
-  });
-
-  React.useEffect(() => {
-    setRequestState({ status: "loading" });
-    fetchHealthCheck()
-      .then((response) => {
-        if (response.status !== 200) {
-          throw new Error(`Api Request failed with status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((responseJson) => {
-        setRequestState({ status: "successfull", data: responseJson });
-      })
-      .catch((error) => {
-        setRequestState({ status: "failed", error: error });
-      });
-  }, []);
-
   return (
-    <>
-      <h1>App</h1>
-      <div>
-        <span>Request State:</span>
-        <span>{requestState.status}</span>
-        {requestState.status === "failed" && (
-          <span>{requestState.error.toString()}</span>
-        )}
-        {requestState.status === "successfull" && (
-          <span>{JSON.stringify(requestState.data)}</span>
-        )}
-      </div>
-    </>
+    <ChakraProvider>
+      <Layout>
+        <Heading size="md">OnlineDoctor Basic Interview App</Heading>
+        <HealthChecker />
+      </Layout>
+    </ChakraProvider>
   );
 };
 
-async function fetchHealthCheck() {
-  const response = await fetch(`${process.env.API_BASE_URL}doctors/health`);
-  return response;
-}
+export const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+  return (
+    <Flex flexDir="column">
+      <Flex flexDir="row" bgColor="lightblue" p={4}>
+        <Heading>OnlineDoctor</Heading>
+      </Flex>
+      <Box p={4}>{children}</Box>
+    </Flex>
+  );
+};
