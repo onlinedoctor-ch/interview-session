@@ -5,6 +5,8 @@ from sqlalchemy import pool
 
 import os
 from alembic import context
+from database.sql_database import DatabaseBaseModel
+from service.doctors.models import DoctorOrm
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -19,7 +21,7 @@ fileConfig(config.config_file_name)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
+target_metadata = DatabaseBaseModel.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

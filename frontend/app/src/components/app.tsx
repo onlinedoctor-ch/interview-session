@@ -1,13 +1,12 @@
 import React from "react";
-import { HealthChecker } from "./HealthChecker";
-import { Box, ChakraProvider, Flex, Heading, Text } from "@chakra-ui/react";
+import { DoctorsList } from "./DoctorsList";
+import { ChakraProvider, Flex, Heading, Text } from "@chakra-ui/react";
 
 export const App: React.FC = () => {
   return (
     <ChakraProvider>
       <Layout>
-        <Heading size="md">OnlineDoctor Basic Interview App</Heading>
-        <HealthChecker />
+        <DoctorsList />
       </Layout>
     </ChakraProvider>
   );
@@ -15,11 +14,24 @@ export const App: React.FC = () => {
 
 export const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
-    <Flex flexDir="column">
-      <Flex flexDir="row" bgColor="lightblue" p={4}>
-        <Heading>OnlineDoctor</Heading>
+    <Flex flexDir="column" height="100%">
+      <Flex flexDir="row" bgColor="teal" p={4}>
+        <Heading color="white">OnlineDoctor</Heading>
       </Flex>
-      <Box p={4}>{children}</Box>
+      <Flex flexDir="column" p={4} flex={1} overflowY="auto">
+        {children}
+      </Flex>
+      <Flex
+        flexDir="column"
+        bgColor="teal"
+        color="whitesmoke"
+        p={4}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Heading size="sm">Made with ☕</Heading>
+        <Text fontSize="sm">@OnlineDoctor</Text>
+      </Flex>
     </Flex>
   );
 };

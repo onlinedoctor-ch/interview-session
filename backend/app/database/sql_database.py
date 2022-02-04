@@ -13,7 +13,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session, sessionmaker
 
 SessionFactory = sessionmaker(autocommit=False, autoflush=False)
-ModelBase = declarative_base()
+DatabaseBaseModel = declarative_base()
 
 
 class SqlDatabase:

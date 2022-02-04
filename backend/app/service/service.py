@@ -2,8 +2,8 @@ from sys import prefix
 from database.sql_database import SqlDatabase
 from fastapi import FastAPI
 from fastapi.logger import logger
-from service.doctors import queries as doctor_queries
-
+from service.doctors import commands as doctor_commands, queries as doctor_queries
+from service.system import queries as system_queries
 
 class Service(FastAPI):
     def __init__(self, *, db: SqlDatabase = None):
@@ -29,4 +29,7 @@ class Service(FastAPI):
         logger.info("Shutting application down...")
 
     def _setup_routes(self) -> None:
-        self.include_router(doctor_queries.router, prefix="/doctors")
+        self.include_router(doctor_commands.router)
+        self.include_router(doctor_queries.router)
+        
+        self.include_router(system_queries.router)

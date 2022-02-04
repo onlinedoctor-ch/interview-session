@@ -1,4 +1,5 @@
 import React from "react";
+import { Config } from "./config";
 
 type PromiseState =
   | { status: "initial" }
@@ -43,6 +44,6 @@ export const HealthChecker: React.FC = () => {
 };
 
 async function fetchHealthCheck() {
-  const response = await fetch(`${process.env.API_BASE_URL}doctors/health`);
+  const response = await fetch(`${Config.apiBaseUrl}doctors/health`);
   return response;
 }
