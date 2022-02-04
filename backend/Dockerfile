@@ -1,8 +1,8 @@
-FROM python:3.9-slim-bullseye
+FROM mcr.microsoft.com/vscode/devcontainers/python:3.9-bullseye
 
 ARG user_id=1001
 ARG group_id=1002
-ARG user=circleci
+ARG user=app-user
 ARG group=dev
 RUN addgroup --system $group --gid $group_id \
     && adduser $user --gid $group_id --uid $user_id --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password

@@ -1,12 +1,14 @@
-import React from "react";
+import * as React from "react";
 import { DoctorsList } from "./DoctorsList";
 import { ChakraProvider, Flex, Heading, Text } from "@chakra-ui/react";
+import { HealthChecker } from "./HealthChecker";
 
 export const App: React.FC = () => {
   return (
     <ChakraProvider>
       <Layout>
         <DoctorsList />
+        <HealthChecker />
       </Layout>
     </ChakraProvider>
   );

@@ -1,4 +1,4 @@
-FROM node:17
+FROM mcr.microsoft.com/vscode/devcontainers/typescript-node
 
 COPY ./app /app
 

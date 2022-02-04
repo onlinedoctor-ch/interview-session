@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Button, Flex, Heading, useDisclosure } from "@chakra-ui/react";
 import { Doctor, getDoctors, deleteDoctor } from "./doctorApi";
 import { CreateDoctorModal } from "./CreateDoctorModal";

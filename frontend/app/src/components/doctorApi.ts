@@ -1,4 +1,4 @@
-import {Config} from './config';
+import { Config } from './config';
 
 interface DoctorBase {
   first_name: string;
@@ -10,7 +10,7 @@ export interface Doctor extends DoctorBase {
   id: number;
 }
 
-export interface DoctorCreate extends DoctorBase {}
+export interface DoctorCreate extends DoctorBase { }
 
 
 export async function getDoctors() {

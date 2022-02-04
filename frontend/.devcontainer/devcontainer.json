@@ -1,0 +1,18 @@
+{
+	"name": "Frontend - OD Example",
+	"dockerComposeFile": [
+		"../../docker-compose.yml",
+		"docker-compose.yml"
+	],
+	"service": "frontend",
+	"workspaceFolder": "/app",
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.foreground": "#dd74fd"
+		}
+	},
+	"extensions": [],
+	"forwardPorts": [
+		1234
+	]
+}

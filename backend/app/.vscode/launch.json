@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: FastAPI",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "--host",
+                "0.0.0.0",
+                "--reload",
+                "--factory",
+                "service.main:create_app",
+                "--port",
+                "5000"
+            ],
+            "jinja": true
+        }
+    ]
+}
