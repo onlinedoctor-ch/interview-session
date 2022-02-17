@@ -17,7 +17,7 @@ This application consists of a typical three tier setup with a
 database, backend and frontend. Those pieces are orchestrated
 using docker compose and configured in `docker-compose.yml`.
 
-![Architecture diagrom of demo application](./docs/demo_app_architecture.jpg)
+![Architecture diagram of demo application](./docs/demo_app_architecture.jpg)
 
 ### Database
 The postgres database has a single table for storing doctor information. 
@@ -31,14 +31,14 @@ you can access this page under http://localhost:5001/docs
 
 ### Frontend
 The frontend is written in TypeScript using React. It is built using the
-parcel bundler. When running the application the frontend is served under http://localhost:1234/.
+parcel bundler. When running the application, the frontend is served under http://localhost:1234/.
 
 
 ## Running the application
-To run the application execute the following command in this directory.
+To run the application, execute the following command in the root directory:
 
 ```
-docker-compose up
+make run
 ```
 
 This will start database, backend and frontend in development mode. The source
@@ -48,23 +48,23 @@ automatically rebuild when code changes.
 ## Developing using VSCode
 
 For your convenience we provide devcontainer configs for both
-backend and frontend. First install the [remote container extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). To use the configs then open two VSCode windows.
+backend and frontend. First install the [remote container extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). To use the configs, open two VSCode windows.
 In each of window click the remote container extension (bottom left of the window) and select "Open folder in container".
 In one of the windows select the `backend` folder while in the other select the `frontend` folder.
 
-The windows should appear are color coded. The backend window shows green icons in the sidebar while the frontend shows pink icons.
+The windows should be color coded. The backend window shows green icons in the sidebar, while the frontend shows pink icons.
 
 ### Backend
 
-The backend devcontainer has a launch.json that allows you to run and debug the FastAPI backend service. The 
-database client extension is preconfigured so you can easily view the database.
+The backend devcontainer has a `launch.json` file that allows you to run and debug the FastAPI backend service. The 
+database client extension is preconfigured to easily view the database in VSCode.
 
 
 ### Frontend
 
-To build and develop the frontend run the npm script `dev`.
+To build and develop the frontend run the npm script `dev` inside the Docker container:
 ```
 npm run dev
 ```
 
-The web app should be available under http://localhost:1234
+The web app is available under http://localhost:1234
