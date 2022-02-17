@@ -8,4 +8,4 @@ RUN npm install
 
 EXPOSE 1234
 
-CMD [ "npm", "run", "dev" ]
+CMD set -x && npm install && npm run dev
