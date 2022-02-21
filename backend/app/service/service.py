@@ -5,6 +5,7 @@ from fastapi.logger import logger
 from service.doctors import commands as doctor_commands, queries as doctor_queries
 from service.system import queries as system_queries
 
+
 class Service(FastAPI):
     def __init__(self, *, db: SqlDatabase = None):
         self._db = db
@@ -31,5 +32,5 @@ class Service(FastAPI):
     def _setup_routes(self) -> None:
         self.include_router(doctor_commands.router)
         self.include_router(doctor_queries.router)
-        
+
         self.include_router(system_queries.router)

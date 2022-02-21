@@ -44,6 +44,6 @@ export const HealthChecker: React.FC = () => {
 };
 
 async function fetchHealthCheck() {
-  const response = await fetch(`${Config.apiBaseUrl}doctors/health`);
+  const response = await fetch(`${Config.apiBaseUrl}health`);
   return response;
 }
