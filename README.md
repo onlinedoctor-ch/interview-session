@@ -43,9 +43,6 @@ you can access this page under http://localhost:5000/docs
 To run the backend, run the following commands within the [./backend/app](./backend/app) directory:
 
 ```bash
-pip install -r requirements.txt
-
-# convenience script to run uvicorn
 ./start.sh 
 ```
 
@@ -58,8 +55,6 @@ parcel bundler. When running the application, the frontend is served under http:
 
 To build and develop the frontend run the npm script `dev` inside [./frontend/app](./frontend/app) directory:
 ```bash
-npm install
-
 npm run dev
 ```
 
