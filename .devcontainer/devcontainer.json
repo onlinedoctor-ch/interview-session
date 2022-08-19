@@ -1,0 +1,32 @@
+{
+	"name": "The Interview",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"settings": { 
+				"files.exclude": {
+					"**/.git": true,
+					"**/.svn": true,
+					"**/.hg": true,
+					"**/CVS": true,
+					"**/.DS_Store": true,
+					"**/Thumbs.db": true,
+					"**/*.pyc": {"when": "$(basename).py"}, 
+					"**/__pycache__": true
+				},
+				"python.formatting.provider": "black"
+			},
+			
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"cweijan.vscode-database-client2"
+			]
+		}
+	},
+	"postCreateCommand": "npm install -g npm@latest && pip install --upgrade pip",
+	"forwardPorts": [1234, 5001, 5432],
+	"remoteUser": "vscode"
+}
