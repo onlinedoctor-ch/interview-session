@@ -27,6 +27,6 @@
 		}
 	},
 	"postCreateCommand": "npm install -g npm@latest && pip install --upgrade pip",
-	"forwardPorts": [1234, 5001, 5432],
+	"forwardPorts": [1234, 5000, 5432],
 	"remoteUser": "vscode"
 }
