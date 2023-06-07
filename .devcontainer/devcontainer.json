@@ -18,11 +18,9 @@
 				},
 				"python.formatting.provider": "black"
 			},
-			
 			"extensions": [
 				"ms-python.python",
-				"ms-python.vscode-pylance",
-				"cweijan.vscode-database-client2"
+				"ms-python.vscode-pylance"
 			]
 		}
 	},
