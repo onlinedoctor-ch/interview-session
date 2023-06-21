@@ -1,12 +1,11 @@
 from dataclasses import Field
-from doctest import Example
 from pydantic import BaseModel, Field
 from database.sql_database import DatabaseBaseModel
 from sqlalchemy import Column, Integer, String
 
 
 class DoctorOrm(DatabaseBaseModel):
-    __tablename__ = 'doctors'
+    __tablename__ = "doctors"
     id = Column(Integer, primary_key=True, nullable=False)
     first_name = Column(String(50), nullable=False)
     last_name = Column(String(50), nullable=False)

@@ -1,4 +1,3 @@
-from sys import prefix
 from database.sql_database import SqlDatabase
 from fastapi import FastAPI
 from fastapi.logger import logger
