@@ -62,6 +62,7 @@ export const DoctorsList: React.FC = () => {
         <Flex flexDirection="column" overflowY="auto">
           {requestState.data.map((doctor) => (
             <Flex
+              key={doctor.id}
               flexDir="row"
               p={4}
               my={2}

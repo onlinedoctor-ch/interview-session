@@ -39,8 +39,7 @@ export async function deleteDoctor(doctorId: number) {
   const response = await fetch(`${Config.apiBaseUrl}doctors/${doctorId}`, {
     method: "delete",
   });
-  if (response.status !== 200) {
+  if (response.status !== 204) {
     throw new Error(`Api Request failed with status: ${response.status}`);
   }
-  return response.json();
 }
