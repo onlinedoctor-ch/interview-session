@@ -2,8 +2,8 @@ import os
 
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.database.sql_database import SqlDatabase
-from app.service.service import Service
+from database.sql_database import SqlDatabase
+from service.service import Service
 
 
 def create_app() -> Service:

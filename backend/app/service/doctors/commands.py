@@ -3,10 +3,10 @@ from sqlalchemy.orm.session import Session
 from starlette import status
 from starlette.responses import Response
 
-from app.database.sql_database import db_session
-from app.service.doctors.models import BaseDoctor
-from app.service.doctors.models import DoctorOrm
-from app.service.doctors.models import Doctor
+from database.sql_database import db_session
+from service.doctors.models import BaseDoctor
+from service.doctors.models import DoctorOrm
+from service.doctors.models import Doctor
 
 router = APIRouter()
 

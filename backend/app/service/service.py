@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.logger import logger
 
-from app.database.sql_database import SqlDatabase
-from app.service.doctors import commands as doctor_commands, queries as doctor_queries
-from app.service.system import queries as system_queries
+from database.sql_database import SqlDatabase
+from service.doctors import commands as doctor_commands, queries as doctor_queries
+from service.system import queries as system_queries
 
 
 class Service(FastAPI):
