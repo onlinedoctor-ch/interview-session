@@ -20,11 +20,12 @@
 			},
 			"extensions": [
 				"ms-python.python",
-				"ms-python.vscode-pylance"
+				"ms-python.vscode-pylance",
+				"vscode.typescript-language-features"
 			]
 		}
 	},
-	"postCreateCommand": "npm install -g npm@latest && pip install --upgrade pip && pip install -r backend/app/requirements.txt && cd frontend/app && npm ci",
+	"postCreateCommand": "cd frontend/app && npm ci",
 	"forwardPorts": [1234, 5000, 5432],
 	"remoteUser": "vscode"
 }
