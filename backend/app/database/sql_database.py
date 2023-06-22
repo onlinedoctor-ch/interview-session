@@ -9,8 +9,7 @@ from fastapi.logger import logger
 from psycopg2._psycopg import OperationalError
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.orm import declarative_base, Session, sessionmaker
 
 SessionFactory = sessionmaker(autocommit=False, autoflush=False)
 DatabaseBaseModel = declarative_base()
@@ -53,7 +52,9 @@ class SqlDatabase:
                 elapsed_time = datetime.now() - start_time
 
                 if elapsed_time.total_seconds() > 60:
-                    logger.error("Could not connect to the database, exiting application.")
+                    logger.error(
+                        "Could not connect to the database, exiting application."
+                    )
                     exit(1)
 
                 sleep(1)

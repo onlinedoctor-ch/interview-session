@@ -1,7 +1,8 @@
 from dataclasses import Field
 from pydantic import BaseModel, Field
-from database.sql_database import DatabaseBaseModel
 from sqlalchemy import Column, Integer, String
+
+from app.database.sql_database import DatabaseBaseModel
 
 
 class DoctorOrm(DatabaseBaseModel):
