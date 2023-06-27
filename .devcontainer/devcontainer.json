@@ -25,7 +25,7 @@
 			]
 		}
 	},
-	"postCreateCommand": "cd frontend/app && npm ci",
+	"postCreateCommand": "cd frontend && npm ci",
 	"forwardPorts": [1234, 5000, 5432],
 	"remoteUser": "vscode"
 }

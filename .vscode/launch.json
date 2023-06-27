@@ -6,7 +6,7 @@
             "type": "python",
             "request": "launch",
             "module": "uvicorn",
-            "cwd": "${workspaceFolder}/backend/app",
+            "cwd": "${workspaceFolder}/backend",
             "args": [
                 "--host",
                 "0.0.0.0",

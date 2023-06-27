@@ -4,9 +4,9 @@ from typing import Generator
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session, scoped_session
 
-from app.database.sql_database import DatabaseBaseModel, SessionFactory, SqlDatabase
-from app.service.main import create_app
-from app.service.service import Service
+from backend.database.sql_database import DatabaseBaseModel, SessionFactory, SqlDatabase
+from backend.service.main import create_app
+from backend.service.service import Service
 
 
 @pytest.fixture(scope="session")
