@@ -4,9 +4,9 @@ from typing import Generator
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session, scoped_session
 
-from backend.database.sql_database import DatabaseBaseModel, SessionFactory, SqlDatabase
-from backend.service.main import create_app
-from backend.service.service import Service
+from database.sql_database import DatabaseBaseModel, SessionFactory, SqlDatabase
+from service.main import create_app
+from service.service import Service
 
 
 @pytest.fixture(scope="session")
@@ -33,7 +33,7 @@ def database_tables(database: SqlDatabase) -> Generator[None, None, None]:
 def database_session(
     database: SqlDatabase,
     database_tables: None,
-) -> Session:
+) -> Generator[Session, None, None]:
     connection = database.engine.connect()
     transaction = connection.begin()
     TestSession.configure(bind=connection)
