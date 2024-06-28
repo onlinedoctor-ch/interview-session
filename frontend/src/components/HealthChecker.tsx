@@ -4,7 +4,7 @@ import { Config } from "./config";
 type PromiseState =
   | { status: "initial" }
   | { status: "loading" }
-  | { status: "successfull"; data: unknown }
+  | { status: "successful"; data: unknown }
   | { status: "failed"; error: string };
 
 export const HealthChecker: React.FC = () => {
@@ -22,7 +22,7 @@ export const HealthChecker: React.FC = () => {
         return response.json();
       })
       .then((responseJson) => {
-        setRequestState({ status: "successfull", data: responseJson });
+        setRequestState({ status: "successful", data: responseJson });
       })
       .catch((error) => {
         setRequestState({ status: "failed", error: error });
@@ -36,7 +36,7 @@ export const HealthChecker: React.FC = () => {
       {requestState.status === "failed" && (
         <span>{requestState.error.toString()}</span>
       )}
-      {requestState.status === "successfull" && (
+      {requestState.status === "successful" && (
         <span>{JSON.stringify(requestState.data)}</span>
       )}
     </>

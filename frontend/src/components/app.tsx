@@ -1,6 +1,6 @@
 import * as React from "react";
 import { DoctorsList } from "./DoctorsList";
-import { ChakraProvider, Flex, Heading, Text } from "@chakra-ui/react";
+import { ChakraProvider, Flex, Heading, Spacer, Text } from "@chakra-ui/react";
 import { HealthChecker } from "./HealthChecker";
 
 export const App: React.FC = () => {
@@ -8,6 +8,7 @@ export const App: React.FC = () => {
     <ChakraProvider>
       <Layout>
         <DoctorsList />
+        <Spacer />
         <HealthChecker />
       </Layout>
     </ChakraProvider>
@@ -28,7 +29,6 @@ export const Layout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         bgColor="teal"
         color="whitesmoke"
         p={4}
-        justifyContent="center"
         alignItems="center"
       >
         <Heading size="sm">Made with ☕</Heading>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button, Flex, Heading, useDisclosure } from "@chakra-ui/react";
+import { Button, Flex, Heading, Text, useDisclosure } from "@chakra-ui/react";
 import { Doctor, getDoctors, deleteDoctor } from "./doctorApi";
 import { CreateDoctorModal } from "./CreateDoctorModal";
 
@@ -74,7 +74,7 @@ export const DoctorsList: React.FC = () => {
                 <Heading size="sm">
                   {doctor.first_name} {doctor.last_name}
                 </Heading>
-                <Flex flexDir="row">{doctor.specialization}</Flex>
+                <Text>{doctor.specialization}</Text>
               </Flex>
               <Button
                 onClick={async () => {
