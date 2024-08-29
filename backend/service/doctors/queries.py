@@ -1,21 +1,10 @@
 from fastapi import APIRouter, Depends
-from pydantic import BaseModel
 from sqlalchemy.orm.session import Session
 
 from database.sql_database import db_session
-from service.doctors.models import BaseDoctor
-from service.doctors.models import DoctorOrm
-from service.doctors.models import Doctor
+from service.doctors.models import Doctor, DoctorOrm
 
 router = APIRouter()
-
-
-class HealthCheck(BaseModel):
-    status: str
-
-
-class DoctorCreate(BaseDoctor):
-    pass
 
 
 @router.get("/doctors")
