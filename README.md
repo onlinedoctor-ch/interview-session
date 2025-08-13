@@ -58,3 +58,14 @@ npm run dev
 ```
 
 The web app is available under http://localhost:1234
+
+#### 🛠 If parcel Hangs on `npm run dev` (Apple Silicon)
+
+If your terminal freezes at:
+
+```bash
+> frontend@1.0.0 dev
+> parcel src/index.html
+````
+Disable Rosetta emulation acceleration in Docker’s settings, this should prevent Parcel from freezing during startup.
+
