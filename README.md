@@ -67,5 +67,5 @@ If your terminal freezes at:
 > frontend@1.0.0 dev
 > parcel src/index.html
 ````
-Disable Rosetta emulation acceleration in Docker’s settings, this should prevent Parcel from freezing during startup.
+Disable Rosetta emulation acceleration in Docker’s settings, delete `.parcel-cache` and `dist` folder, and rebuild the container without cache.
 
